@@ -13,6 +13,12 @@ Insert the list of regular expressions into `regex_plugin.py`:
 	metrics = [ Metric("loadingDuration", '.*Loading Duration is\s*([^\s]*)'), \
 	            Metric("scriptPass", '.*Script Pass') ]
 
+If the regular expression has a capture group, the value in the capture group will be used as the metric value.
+
+For example, when the regular expression `.*Loading Duration is\s*([^\s]*)` is matched against `Login Loading Duration is  21.4 secs`, the value captured will be `21.4`.
+
+If the regular expression does not have a capture group, the plugin will output a value of 1 for the metric if the pattern is found and 0 if the pattern is not found.
+
 The name for each metric must match the key for each timeseries specified in `plugin.json`:
 
 	"metrics": [
