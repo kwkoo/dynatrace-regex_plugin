@@ -1,0 +1,47 @@
+{
+  "name": "custom.python.regex_plugin",
+  "version": "0.1",
+  "type": "python",
+  "entity": "PROCESS_GROUP_INSTANCE",
+  "processTypeNames" : [ "JAVA" ],
+  "source": {
+    "package": "regex_plugin",
+    "className": "RegexPlugin",
+    "activation": "Singleton"
+  },
+  "metrics": [
+    {
+      "timeseries": {
+        "key": "loadingDuration",
+        "unit": "Second",
+        "displayname": "Loading Duration"
+      },
+      "alert_settings": [
+	      {
+		      "alert_id": "loading_duration_alert_high",
+		      "event_type": "PERFORMANCE_EVENT",
+		      "event_name": "Slow loading duration",
+		      "threshold": 25.0,
+		      "alert_condition": "ABOVE",
+		      "samples": 1,
+		      "violating_samples": 1,
+		      "dealerting_samples": 1
+	      }
+      ]
+    },
+    {
+      "timeseries": {
+        "key": "scriptPass",
+        "unit": "Count",
+        "displayname":"Script Pass"
+      }
+    }
+  ],
+   "configUI": {
+        "displayName": "Regex Plugin"
+    },
+    "properties": [
+         { "key" : "filename", "type": "String", "displayName": "Filename" },
+         { "key" : "pginame", "type": "String", "displayName": "PGI Name" }
+    ]
+}
