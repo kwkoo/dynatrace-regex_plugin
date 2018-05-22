@@ -3,7 +3,7 @@
 
 This plugin captures values from a text file using regular expressions.
 
-The plugin requires the [OneAgent SDK](https://dynatrace.github.io/plugin-sdk/index.html).
+The plugin requires the [OneAgent Plugin SDK](https://dynatrace.github.io/plugin-sdk/index.html).
 
 ## Customizing the plugin
 
